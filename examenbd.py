@@ -58,17 +58,17 @@ def conectarmysql(host,user, pwd, bd):
                                     `productoExistencia`,
                                     `productoImagen`)
                                     VALUES
-                                    (<{int(j["idProducto"])}>,
-                                    <{j["productoNombreCorto"]}>,
-                                    <{j["productoNombreLargo"]}>,
-                                    <{j["productoDescripcion"]}>,
-                                    <{int(j["productoTipo"])}>,)
-                                    <{j["productoPresentacion"]}>,
-                                    <{float(j["productoCosto"])}>,
-                                    <{float(j["productoGanancia"])}>,
-                                    <{float(j["productoDescuento"])}>,
-                                    <{int(j["productoExistencia"])}>,
-                                    <{j["productoImagen"]}>)""")
+                                    ({j["idProducto"]},
+                                    {j["productoNombreCorto"]},
+                                    {j["productoNombreLargo"]},
+                                    {j["productoDescripcion"]},
+                                    {j["productoTipo"]},
+                                    {j["productoPresentacion"]},
+                                    {j["productoCosto"]},
+                                    {j["productoGanancia"]},
+                                    {j["productoDescuento"]},
+                                    {j["productoExistencia"]},
+                                    {j["productoImagen"]});""")
         except mysql.connector.errors.ProgrammingError as e:
             print("Error en la consulta ", e)
         except Exception as error:
